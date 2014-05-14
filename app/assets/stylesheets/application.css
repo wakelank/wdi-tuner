@@ -10,7 +10,30 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+*=require base
+*=require layout
+*=require skeleton
+
+
  *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #DEC9A0;
+  font-family: sans-serif;
+  color: #435A57;
+}
+a {
+  text-decoration: none;
+  color: #435A57;
+}
+.search_song, .play_song {
+  border: 2px solid #435A57;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+
+}
+
