@@ -3,3 +3,24 @@
   <input type="text" name="search_term" placeholder="...search for a song">
   <input type="submit">
 </form>
+
+<% @songs.each do |song| %>
+<div>
+  <img src="<%= song.artwork_url %>" alt="">
+
+  <h3>
+    <%= song.title %>
+  </h3>
+
+  <audio controls src="<%= song.preview_link %>"></audio>
+
+  <form action="/songs/<%= song.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <%= token_tag %>
+    <button type='submit'>
+      <i class="fa fa-trash-o"></i>
+    </button>
+  </form>
+
+</div>
+<% end %>
